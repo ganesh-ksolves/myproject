@@ -70,3 +70,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+#added pry for debugging
+gem 'pry-rails', :group => :development
