@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Frnds</h1>
+
+<div id="frnds">
+  <% @frnds.each do |frnd| %>
+    <%= render frnd %>
+    <p>
+      <%= link_to "Show this frnd", frnd %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New frnd", new_frnd_path %>

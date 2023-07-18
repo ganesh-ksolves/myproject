@@ -1,0 +1,2 @@
+class Frnd < ApplicationRecord
+end
