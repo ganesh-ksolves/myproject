@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+  
+  devise_for :users , controllers: {
+    sessions: 'users/sessions'
+  }
+
   resources :frnds
-  root "home#index"
+  root to: "home#index"
+  # root "home#index"
   get 'home/index'
   get 'home/about'
+  
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

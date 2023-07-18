@@ -72,3 +72,5 @@ group :test do
 end
 #added pry for debugging
 gem 'pry-rails', :group => :development
+# added devise gem for authentication 
+gem 'devise'
