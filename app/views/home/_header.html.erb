@@ -9,18 +9,18 @@
         <li class="nav-item">
             <%= link_to 'Home', home_index_path , class:'nav-link' %>
         </li>
-        <li class="nav-item">
+        
+         <li class="nav-item">
+            <%= link_to 'about', home_about_path, class:"nav-link" %>
+        </li>
+        <% if user_signed_in? %>
+          <li class="nav-item">
             <%= link_to 'Add Friend', new_frnd_path, class:"nav-link" %>
         </li>
         <li class="nav-item">
           <%= link_to 'My friends' , frnds_path , class:'nav-link'%>
         </li>
-         <li class="nav-item">
-            <%= link_to 'about', home_about_path, class:"nav-link" %>
-        </li>
-        
-          <% if user_signed_in? %>
-              <li class="nav-item">
+              <li class="nav-item">                
             <%= link_to "sign out", destroy_user_session_path, class:"nav-link" %>
               </li> 
           <%else%>
@@ -31,9 +31,7 @@
             <%= link_to "sign in", new_user_session_path, class:"nav-link" %>
               </li> 
 
-          <% end %>
-
-         
+          <% end %>  
       </ul>
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

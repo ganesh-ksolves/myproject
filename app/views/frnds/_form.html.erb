@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <div>
+    <%= form.label :cover%>
+    <%= form.file_field :cover%>
+    </div>
   <div>
     <%= form.label :first_name, style: "display: block" %>
     <%= form.text_field :first_name %>
