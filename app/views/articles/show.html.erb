@@ -1,0 +1,26 @@
+
+<h1><%= @article.title %></h1>
+
+<p><%= @article.content %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li><%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+  <li> <%= link_to "Back to articles", articles_path %> </li>
+</ul>
+
+<!-- Display number of comments on the article -->
+<p><%= pluralize(@article.comments.count, "comment") %> on this article</p>
+
+<!-- Display number of comments done by the current user on this article -->
+<p><%= pluralize(@article.comments.where(user: current_user).count, "comment") %> by you</p>
+<h2>Comments</h2>
+<%@comments.each do |comment| %>
+<p><strong><%= comment.user.username %></strong>: <%= comment.content %></p>
+ 
+<% end %>
+<h2>Add a comment:</h2>
+<%= render 'comments/new' , article: @article%>
