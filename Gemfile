@@ -74,3 +74,7 @@ end
 gem 'pry-rails', :group => :development
 # added devise gem for authentication 
 gem 'devise'
+
+# added carrierwave gem to hold files....................
+gem 'carrierwave'
+

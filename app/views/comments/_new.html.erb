@@ -1,8 +1,7 @@
-<h1>New Comment</h1>
-
 <%= form_with(model: Comment.new, url: article_comments_path(@article)) do |form| %>
-  <%= form.label :content %>
+  <% form.label :content %>
   <%= form.text_area :content %>
+  <br><br>
 
   <%= form.submit %>
 <% end %>
