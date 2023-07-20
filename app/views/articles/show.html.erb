@@ -25,7 +25,7 @@
 <h2>Comments</h2>
 <div class="comment">
   <% if current_user.profile_pic.present? %>
-    <%= image_tag comment_author.profile_pic.url, class: "avatar-icon" %>
+    <%= image_tag current_user.profile_pic.url, class: "avatar-icon" %>
   <% else %>
     <%# <%= image_tag "default_avatar.png", class: "avatar-icon" % > %>
   <% end %>

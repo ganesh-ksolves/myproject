@@ -32,6 +32,8 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  <%= f.file_field :profile_pic %>
+ 
 
   <div class="actions">
     <%= f.submit "Sign up" %>
@@ -39,8 +41,7 @@
 <% end %>
 <%# <%= form_with(model: @user, url: users_path, method: :post, local: true) do |form| % >
   <!-- ... other form fields ... -->
-  <%= form.file_field :profile_pic % >
-  <%= form.submit % >
+  
 <% end % > %>
 
 

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    before_action :authenticate_user! , except: [:home]
+    before_action :authenticate_user! , except: [:home_about]
 
       # Prevent CSRF attacks by raising an exception.
     # For APIs, you may want to use :null_session instead.
