@@ -33,7 +33,7 @@ class FrndsController < ApplicationController
       end
     end
   end
-
+  
   # PATCH/PUT /frnds/1 or /frnds/1.json
   def update
     respond_to do |format|

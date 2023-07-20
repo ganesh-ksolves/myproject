@@ -14,10 +14,10 @@
             <%= link_to 'about', home_about_path, class:"nav-link" %>
         </li>
         <% if user_signed_in? %>
-          <li class="nav-item">
+          <li class="nav-item d-none">
             <%= link_to 'Add Friend', new_frnd_path, class:"nav-link" %>
         </li>
-        <li class="nav-item">
+        <li class="nav-item d-none">
           <%= link_to 'My friends' , frnds_path , class:'nav-link'%>
         </li>
         <li class="nav-item">
