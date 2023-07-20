@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # get 'articles_with_last_comments/index'
+  get '/articles_with_last_comments', to: 'articles_with_last_comments#index', as: 'articles_with_last_comments'
   
   devise_for :users , controllers: {
     sessions: 'users/sessions'
@@ -6,7 +8,6 @@ Rails.application.routes.draw do
 
   resources :frnds
   root to: "home#index"
-  # root "home#index"
   get 'home/index'
   get 'home/about'
 

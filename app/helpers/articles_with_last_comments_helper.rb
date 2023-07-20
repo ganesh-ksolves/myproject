@@ -1,0 +1,2 @@
+module ArticlesWithLastCommentsHelper
+end

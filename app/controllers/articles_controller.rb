@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
 
   def index  #this controller controls this file in the view app/views/articles/index.html.erb
+    @articles = Article.eager_load(:comments)
 
     @articles = Article.all
   end

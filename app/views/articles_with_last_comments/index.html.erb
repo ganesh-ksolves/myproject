@@ -1,0 +1,13 @@
+<h1>Articles with Last 5 Comments</h1>
+
+<% @articles_with_last_comments.each do |article_data| %>
+  <h2><%= article_data[:article].title %></h2>
+  <p><%= article_data[:article].content %></p>
+
+  <h3>Last 5 Comments:</h3>
+  <% article_data[:last_comments].each do |comment| %>
+    <p><strong><%= comment.user.username %></strong>: <%= comment.content %></p>
+  <% end %>
+
+  <hr>
+<% end %>

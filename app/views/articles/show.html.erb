@@ -1,5 +1,10 @@
 
 <h1><%= @article.title %></h1>
+<% if @article.image.present? %>
+  <%= image_tag @article.image.url, class: "article-image" %>
+<% else %>
+  <!-- Default article image or placeholder image -->
+<% end %>
 
 <p><%= @article.content %></p>
 
@@ -18,8 +23,15 @@
 <!-- Display number of comments done by the current user on this article -->
 <p><%= pluralize(@article.comments.where(user: current_user).count, "comment") %> by you</p>
 <h2>Comments</h2>
+<div class="comment">
+  <% if current_user.profile_pic.present? %>
+    <%= image_tag comment_author.profile_pic.url, class: "avatar-icon" %>
+  <% else %>
+    <%# <%= image_tag "default_avatar.png", class: "avatar-icon" % > %>
+  <% end %>
 <%@comments.each do |comment| %>
 <p><strong><%= comment.user.username %></strong>: <%= comment.content %></p>
+
  
 <% end %>
 <h2>Add a comment:</h2>

@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
   belongs_to :user
   has_many :comments, as: :commentable
-  # mount_uploader :image, ImageUploader
+  mount_uploader :image, ImageUploader
 end
