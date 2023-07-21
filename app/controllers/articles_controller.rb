@@ -9,7 +9,12 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     @comments = @article.comments # Retrieve comments associated with the article
   end
-  
+  def like
+    @article = Article.find(params[:id])
+    self.likes_count += 1
+  save
+  render 'like'
+  end
   def new
     @article = Article.new
   end

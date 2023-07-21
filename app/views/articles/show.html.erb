@@ -5,16 +5,26 @@
 <% else %>
   <!-- Default article image or placeholder image -->
 <% end %>
-
+<div class="container">
 <p><%= @article.content %></p>
+<div class="container">
+<%# <button type="button"  class="btn btn-primary" id="like_article">like %>
+  <%# <%= link_to "like" % > %>
+<%# </button> %>
 
+<button class="like-button btn-primary" data-article-id="<%= @article.id %>">Like</button>
+</div>
+</div>
+
+
+<br>
 <ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article), data: {
+  <li class ="btn btn-primary text-black-50 bg-white"><%= link_to "Edit", edit_article_path(@article) %></li>
+  <li class ="btn btn-primary text-black-50 bg-white"><%= link_to "Destroy", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>
-  <li> <%= link_to "Back to articles", articles_path %> </li>
+  <li class ="btn btn-primary text-black-50 bg-white"> <%= link_to "articles", articles_path %> </li>
 </ul>
 
 <!-- Display number of comments on the article -->

@@ -78,3 +78,4 @@ gem 'devise'
 # added carrierwave gem to hold files....................
 gem 'carrierwave'
 
+#
