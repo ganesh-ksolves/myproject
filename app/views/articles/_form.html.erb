@@ -18,6 +18,8 @@
   <div>
     <%= form.label :content %><br>
     <%= form.text_area :content %><br>
+    <% binding.pry %>
+    
     <% article.errors.full_messages_for(:content).each do |message| %>
       <div><%= message %></div>
     <% end %>

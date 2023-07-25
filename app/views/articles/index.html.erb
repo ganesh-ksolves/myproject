@@ -3,13 +3,19 @@
 
 Our blog has <%= Article.count %> articles and counting!
 
-<ul>
+<ul class="nav flex-column">
   <% @articles.each do |article| %>
-      <li>
-        <%= link_to article.title, article %>
+      <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <%= link_to article.title, article %>
+            </a>        
       </li>   
   <% end %>
 </ul>
 
 
-<%= link_to "New Article", new_article_path %>
+<%# <%= link_to "New Article", new_article_path % > %>
+
+<div class="nav justify-content-center nav-pills flex-column flex-sm-row">
+<%= paginate @articles %>
+</div>

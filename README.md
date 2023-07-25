@@ -22,3 +22,13 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+
+<% @article = user.article.first %>
+<div id="send_like_for_<%= @article.id %>">
+     <% if @article.is_liked?(@article, current_user)%>
+        <%= render 'unlike'%>
+     <%else%>
+        <%= render 'like'%>
+     <%end%>

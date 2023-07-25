@@ -13,10 +13,14 @@ Rails.application.routes.draw do
   get 'home/about'
 
   resources :articles  do
+    
     post 'like', on: :member
-      resources :comments
+    resources :comments
+    
   end
-
+  resources :articles do
+    get '/page/:page', action: :index, on: :collection
+  end
   
   
   # resources :articles, only: :index do

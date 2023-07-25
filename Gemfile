@@ -78,4 +78,5 @@ gem 'devise'
 # added carrierwave gem to hold files....................
 gem 'carrierwave'
 
-#
+# adding pagination through kaminari gem 
+gem 'kaminari'

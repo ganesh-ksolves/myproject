@@ -2,19 +2,27 @@ class ArticlesController < ApplicationController
 
   def index  #this controller controls this file in the view app/views/articles/index.html.erb
     @articles = Article.eager_load(:comments)
+    # @articles = Article.all
+    @articles = Article.all.page(params[:page])
+    # @articles = Article.order(:title).page params[:article]
 
-    @articles = Article.all
+      # respond_to do |format|
+      #   @articles = @articles.paginate(:page => params[:page], :per_page => 5) 
+      #   format.html  index.html.erb
+      #   format.json { render json: @articles }
+      # end 
+
   end
   def show 
     @article = Article.find(params[:id])
     @comments = @article.comments # Retrieve comments associated with the article
   end
-  def like
-    @article = Article.find(params[:id])
-    self.likes_count += 1
-  save
-  render 'like'
-  end
+  # def like
+  #   @article = Article.find(params[:id])
+  #   self.likes_count += 1
+  # save
+  # render 'like'
+  # end
   def new
     @article = Article.new
   end
@@ -50,13 +58,15 @@ class ArticlesController < ApplicationController
 
     redirect_to root_path, status: :see_other
   end
-  private
-  def article_params
-    params.require(:article).permit(:title,:body)
-  end
+  # private
+  # def article_params
+  #   params.require(:article).permit(:title,:body)
+  # end
 
   private
   def article_params
     params.require(:article).permit(:title, :content, :image, :status)
   end
 end
+
+    # @articles = kaminari.paginate_array(@articles).page(params[:page]).per(5)
